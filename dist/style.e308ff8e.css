@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background:#333;
+    color:#fff;
+    line-height: 1.6;
+}
+.slider {
+    position: relative;
+    overflow:hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.slide.current {
+    opacity: 1;
+}
+.slide.content
+{
+    position: absolute;
+    /* from the bottom */
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    opacity: 0;
+    background-color: rgba(255,255,255, 0.8);
+    color: #333;
+    padding: 35px;
+}
+.slide.current .content 
+{
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+.buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color:#fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
+.buttons button:hover {
+    background-color:#fff;
+    color:#333;
+}
+@media (max-width: 500px) {
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+    .slide.current .content {
+        transform: translateY(-300px);
+    }
+}
+.slide .content h1 
+{
+    margin-bottom: 10px;
+}
+
+/* Background Images */
+.slide:first-child {
+    background: url('adult-business-meeting-business-people-1438072.796876fd.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(2) {
+    background: url('aeroplane-aircraft-airplane-1465904.3f2e292f.jpg') no-repeat center top/cover;
+}
+.slide:nth-child(3) {
+    background: url('aeroplane-aircraft-airplane-35810.f0e97696.jpg') no-repeat center top/cover;
+}
+.slide:nth-child(4) {
+    background: url('aircraft-airplane-architecture-1769408.577f6c66.jpg') no-repeat center top/cover;
+}
+.slide:nth-child(5) {
+    background: url('apple-chair-contemporary-939331.49658c6b.jpg') no-repeat center top/cover;
+}
+.slide:nth-child(6) {
+    background: url('aeroplane-aircraft-airplane-35810.f0e97696.jpg') no-repeat center top/cover;
+}
